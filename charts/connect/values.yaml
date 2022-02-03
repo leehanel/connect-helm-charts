@@ -17,6 +17,7 @@ connect:
     resources: {}
     httpPort: 8081
   serviceType: NodePort
+  serviceAnnotations: {}
   credentialsName: op-credentials
   credentialsKey: 1password-credentials.json
   credentials:
