@@ -49,7 +49,7 @@ app.kubernetes.io/instance: {{ .Release.Name }}
 
 {{- define "onepassword-connect.url" -}}
 {{- if .Values.connect.tls.enabled -}}
-{{- if .Values.connect.tls.host -}}
+{{- ne (tpl (.Values.connect.tls.host | toString) .) "" -}}
 https://{{ .Values.connect.tls.host }}:{{ .Values.connect.api.httpsPort  }}
 {{- else -}}
 https://{{ .Values.connect.applicationName }}:{{ .Values.connect.api.httpsPort  }}
