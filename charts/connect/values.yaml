@@ -25,6 +25,7 @@ connect:
   tls:
     enabled: false
     secret: op-connect-tls
+    host: ""
   dataVolume:
     name: shared-data
     type: emptyDir
